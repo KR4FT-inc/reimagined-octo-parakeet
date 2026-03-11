@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KR4FT INSIGNIA</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:#000;color:#fff;}
+
+/* NAVBAR */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;border-bottom:1px solid #222;}
+.logo img{height:50px;width:auto;}
+nav ul{display:flex;list-style:none;gap:30px;align-items:center;}
+nav a{text-decoration:none;color:#aaa;}
+.cart{background:#fff;color:#000;padding:5px 10px;border-radius:20px;font-size:12px;}
+
+/* HERO */
+.hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+.hero-logo{max-width:500px;width:80%;margin-bottom:30px;}
+.hero p{margin-top:20px;color:#777;}
+.hero button{margin-top:30px;padding:15px 40px;border:none;background:#fff;color:#000;cursor:pointer;font-weight:bold;}
+
+/* PRODUCTS */
+.products{padding:80px 50px;}
+.products h2{font-size:36px;margin-bottom:40px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
+.card{background:#0c0c0c;padding:20px;transition:.3s;text-align:center;}
+.card:hover{transform:translateY(-6px);}
+.card img{width:100%;margin-bottom:15px;}
+.card h3{margin-bottom:5px;}
+.card p{color:#777;font-weight:bold;}
+.card button{margin-top:10px;padding:10px 20px;border:none;background:#fff;color:#000;cursor:pointer;font-weight:bold;}
+
+/* CART PANEL */
+.cart-panel{position:fixed;right:0;top:0;width:320px;height:100%;background:#111;padding:30px;transform:translateX(100%);transition:.4s;overflow:auto;z-index:1000;}
+.cart-panel.active{transform:translateX(0);}
+.cart-item{margin-bottom:15px;border-bottom:1px solid #222;padding-bottom:10px;}
+.checkout{margin-top:20px;width:100%;padding:15px;border:none;background:#fff;color:#000;font-weight:bold;cursor:pointer;}
+
+/* LOOKBOOK */
+.lookbook{padding:80px 50px;}
+.lookbook h2{font-size:36px;margin-bottom:40px;}
+.look-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.look-grid img{width:100%;}
+
+/* BRAND */
+.brand{padding:100px 50px;text-align:center;}
+.brand h2{font-size:45px;margin-bottom:20px;}
+.brand p{color:#777;max-width:600px;margin:auto;}
+
+/* FOOTER */
+footer{padding:40px;border-top:1px solid #222;text-align:center;color:#777;}
+
+/* MOBILE */
+@media(max-width:700px){
+.hero h1{font-size:50px;}
+nav{padding:20px 20px;}
+nav ul{gap:15px;}
+.products{padding:60px 20px;}
+.logo img{height:40px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">
+<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/IMG_4451.png" alt="KR4FT INSIGNIA">
+</div>
+<ul>
+<li><a href="#">Shop</a></li>
+<li><a href="#">Lookbook</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#" onclick="toggleCart()">Cart</a></li>
+<li class="cart" id="cart-count">0</li>
+</ul>
+</nav>
+
+<section class="hero">
+<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/IMG_4451.png" alt="KR4FT INSIGNIA" class="hero-logo">
+<p>ENGINEERED FOR THE FUTURE</p>
+<button onclick="scrollToShop()">SHOP COLLECTION</button>
+</section>
+
+<section class="products" id="shop">
+<h2>Featured</h2>
+<div class="grid">
+
+<!-- PRODUCT 1: KR4FT POLO TEE -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/30F01E93-C6EA-4246-AA46-9BA332DED213.png" alt="KR4FT POLO TEE">
+<h3>KR4FT POLO TEE</h3>
+<p>₦50,000</p>
+<button onclick="addToCart('KR4FT POLO TEE', 50000)">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 2: NAIJA REP TEE -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/EB817053-9F0A-4BEB-91C8-803FD62AD29B.png" alt="NAIJA REP TEE">
+<h3>NAIJA REP TEE</h3>
+<p>₦30,000</p>
+<button onclick="addToCart('NAIJA REP TEE', 30000)">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 3: SantosXKR4FT Jersey -->
+<div class="card">
+<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/IMG_4431.jpeg" alt="SantosXKR4FT Jersey">
+<h3>SantosXKR4FT Jersey</h3>
+<p>₦35,000</p>
+<button onclick="addToCart('SantosXKR4FT Jersey', 35000)">Add to Cart</button>
+</div>
+
+</div>
+</section>
+
+<section class="lookbook">
+<h2>Lookbook</h2>
+<div class="look-grid">
+<img src="https://via.placeholder.com/600x700/111111/ffffff?text=LOOK+1" alt="Lookbook 1">
+<img src="https://via.placeholder.com/600x700/222222/ffffff?text=LOOK+2" alt="Lookbook 2">
+<img src="https://via.placeholder.com/600x700/333333/ffffff?text=LOOK+3" alt="Lookbook 3">
+</div>
+</section>
+
+<section class="brand">
+<h2>KR4FT INSIGNIA</h2>
+<p>KR4FT INSIGNIA is a futuristic streetwear label built for creators, rebels, and innovators. Crafted for individuals who design their own path.</p>
+</section>
+
+<footer>
+<p>© KR4FT INSIGNIA</p>
+</footer>
+
+<div class="cart-panel" id="cart-panel">
+<h2>Your Cart</h2>
+<div id="cart-items"></div>
+<button class="checkout" onclick="checkout()">Checkout</button>
+</div>
+
+<script>
+let cart = [];
+let count = 0;
+
+function addToCart(name, price) {
+cart.push({name, price});
+count++;
+document.getElementById("cart-count").innerText = count;
+renderCart();
+}
+
+function renderCart() {
+let container = document.getElementById("cart-items");
+container.innerHTML = "";
+cart.forEach(item => {
+container.innerHTML += `<div class="cart-item"><strong>${item.name}</strong><p>₦${item.price.toLocaleString()}</p></div>`;
+});
+}
+
+function toggleCart() {
+document.getElementById("cart-panel").classList.toggle("active");
+}
+
+function scrollToShop() {
+document.getElementById("shop").scrollIntoView({behavior: "smooth"});
+}
+
+function checkout() {
+alert("Checkout will be integrated with Paystack for Nigerian payments.");
+}
+</script>
+
+</body>
+</html>
