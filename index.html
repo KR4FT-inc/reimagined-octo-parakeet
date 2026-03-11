@@ -3,141 +3,606 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KR4FT INSIGNIA</title>
-
+<title>KR4FT INSIGNIA // ARCHIVE</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
-body{background:#000;color:#fff;}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
 
-/* NAVBAR */
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 50px;border-bottom:1px solid #222;}
-.logo img{height:50px;width:auto;}
-nav ul{display:flex;list-style:none;gap:30px;align-items:center;}
-nav a{text-decoration:none;color:#aaa;}
-.cart{background:#fff;color:#000;padding:5px 10px;border-radius:20px;font-size:12px;}
+body {
+background: #000000;
+color: #ffffff;
+}
+
+/* NAVBAR - Clean */
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 5%;
+border-bottom: 1px solid #222;
+position: sticky;
+top: 0;
+background: #000000;
+z-index: 100;
+}
+
+.logo img {
+height: 45px;
+width: auto;
+display: block;
+}
+
+.nav-links {
+display: flex;
+gap: 40px;
+list-style: none;
+}
+
+.nav-links a {
+text-decoration: none;
+color: #ffffff;
+font-size: 13px;
+font-weight: 400;
+letter-spacing: 1px;
+transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+opacity: 0.6;
+}
+
+.cart-icon {
+color: #ffffff;
+font-size: 13px;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+#cart-count {
+background: #ffffff;
+color: #000000;
+padding: 2px 8px;
+border-radius: 20px;
+font-size: 11px;
+font-weight: 600;
+}
 
 /* HERO */
-.hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-.hero-logo{max-width:500px;width:80%;margin-bottom:30px;}
-.hero p{margin-top:20px;color:#777;}
-.hero button{margin-top:30px;padding:15px 40px;border:none;background:#fff;color:#000;cursor:pointer;font-weight:bold;}
+.hero {
+padding: 100px 5% 60px;
+text-align: center;
+max-width: 900px;
+margin: 0 auto;
+}
 
-/* PRODUCTS */
-.products{padding:80px 50px;}
-.products h2{font-size:36px;margin-bottom:40px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
-.card{background:#0c0c0c;padding:20px;transition:.3s;text-align:center;}
-.card:hover{transform:translateY(-6px);}
-.card img{width:100%;margin-bottom:15px;}
-.card h3{margin-bottom:5px;}
-.card p{color:#777;font-weight:bold;}
-.card button{margin-top:10px;padding:10px 20px;border:none;background:#fff;color:#000;cursor:pointer;font-weight:bold;}
+.hero-logo {
+max-width: 500px;
+width: 90%;
+margin-bottom: 30px;
+}
 
-/* CART PANEL */
-.cart-panel{position:fixed;right:0;top:0;width:320px;height:100%;background:#111;padding:30px;transform:translateX(100%);transition:.4s;overflow:auto;z-index:1000;}
-.cart-panel.active{transform:translateX(0);}
-.cart-item{margin-bottom:15px;border-bottom:1px solid #222;padding-bottom:10px;}
-.checkout{margin-top:20px;width:100%;padding:15px;border:none;background:#fff;color:#000;font-weight:bold;cursor:pointer;}
+.hero h2 {
+font-size: 12px;
+font-weight: 400;
+letter-spacing: 4px;
+color: #888;
+margin-bottom: 20px;
+text-transform: uppercase;
+}
 
-/* LOOKBOOK */
-.lookbook{padding:80px 50px;}
-.lookbook h2{font-size:36px;margin-bottom:40px;}
-.look-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
-.look-grid img{width:100%;}
+.hero p {
+color: #666;
+font-size: 15px;
+line-height: 1.6;
+max-width: 600px;
+margin: 0 auto;
+}
 
-/* BRAND */
-.brand{padding:100px 50px;text-align:center;}
-.brand h2{font-size:45px;margin-bottom:20px;}
-.brand p{color:#777;max-width:600px;margin:auto;}
+/* ARCHIVE GALLERY - ALL DESIGNS VISIBLE */
+.archive {
+padding: 40px 5% 80px;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 60px;
+}
+
+.section-title h2 {
+font-size: 12px;
+font-weight: 400;
+letter-spacing: 4px;
+color: #888;
+text-transform: uppercase;
+margin-bottom: 10px;
+}
+
+.section-title p {
+color: #444;
+font-size: 14px;
+}
+
+.design-grid {
+display: flex;
+flex-direction: column;
+gap: 100px;
+max-width: 1000px;
+margin: 0 auto;
+}
+
+/* INDIVIDUAL DESIGN CARD - FULL VISIBILITY */
+.design-card {
+width: 100%;
+background: #111;
+border: 1px solid #222;
+padding: 40px 40px 50px;
+}
+
+.design-image {
+width: 100%;
+margin-bottom: 30px;
+}
+
+.design-image img {
+width: 100%;
+height: auto;
+display: block;
+border: 1px solid #333;
+}
+
+.design-info {
+text-align: left;
+border-top: 1px solid #222;
+padding-top: 30px;
+}
+
+.design-info h3 {
+font-size: 24px;
+font-weight: 500;
+color: #ffffff;
+letter-spacing: 1px;
+margin-bottom: 10px;
+}
+
+.design-info .reference {
+color: #FFD700;
+font-size: 14px;
+letter-spacing: 2px;
+margin-bottom: 15px;
+text-transform: uppercase;
+}
+
+.design-info .description {
+color: #888;
+font-size: 15px;
+line-height: 1.7;
+margin-bottom: 25px;
+max-width: 600px;
+}
+
+.design-details {
+display: flex;
+gap: 40px;
+flex-wrap: wrap;
+margin-bottom: 30px;
+padding: 20px 0;
+border-top: 1px solid #222;
+border-bottom: 1px solid #222;
+}
+
+.detail-item {
+flex: 1;
+min-width: 150px;
+}
+
+.detail-item .label {
+color: #666;
+font-size: 11px;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-bottom: 5px;
+}
+
+.detail-item .value {
+color: #ffffff;
+font-size: 16px;
+font-weight: 500;
+}
+
+.price-section {
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.price {
+color: #FFD700;
+font-size: 28px;
+font-weight: 600;
+}
+
+.add-btn {
+background: transparent;
+border: 1px solid #ffffff;
+color: #ffffff;
+padding: 12px 40px;
+font-size: 12px;
+font-weight: 500;
+letter-spacing: 2px;
+cursor: pointer;
+transition: all 0.3s;
+text-transform: uppercase;
+}
+
+.add-btn:hover {
+background: #ffffff;
+color: #000000;
+}
+
+/* LOOKBOOK GRID */
+.lookbook {
+padding: 80px 5%;
+background: #0a0a0a;
+}
+
+.lookbook-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+max-width: 1200px;
+margin: 40px auto 0;
+}
+
+.lookbook-grid img {
+width: 100%;
+aspect-ratio: 3/4;
+object-fit: cover;
+border: 1px solid #222;
+}
+
+/* ABOUT */
+.about {
+padding: 100px 5%;
+text-align: center;
+max-width: 700px;
+margin: 0 auto;
+}
+
+.about h2 {
+font-size: 12px;
+font-weight: 400;
+letter-spacing: 4px;
+color: #888;
+text-transform: uppercase;
+margin-bottom: 20px;
+}
+
+.about p {
+color: #666;
+font-size: 15px;
+line-height: 1.8;
+}
 
 /* FOOTER */
-footer{padding:40px;border-top:1px solid #222;text-align:center;color:#777;}
+footer {
+padding: 40px 5%;
+border-top: 1px solid #222;
+text-align: center;
+color: #444;
+font-size: 12px;
+letter-spacing: 1px;
+}
 
-/* MOBILE */
-@media(max-width:700px){
-.hero h1{font-size:50px;}
-nav{padding:20px 20px;}
-nav ul{gap:15px;}
-.products{padding:60px 20px;}
-.logo img{height:40px;}
+/* CART PANEL */
+.cart-panel {
+position: fixed;
+right: -400px;
+top: 0;
+width: 350px;
+height: 100%;
+background: #111;
+border-left: 1px solid #222;
+padding: 30px;
+transition: right 0.3s;
+z-index: 1000;
+overflow-y: auto;
+}
+
+.cart-panel.active {
+right: 0;
+}
+
+.cart-panel h2 {
+font-size: 14px;
+font-weight: 400;
+letter-spacing: 2px;
+color: #ffffff;
+margin-bottom: 20px;
+padding-bottom: 10px;
+border-bottom: 1px solid #222;
+}
+
+.cart-item {
+margin-bottom: 15px;
+padding-bottom: 15px;
+border-bottom: 1px solid #222;
+}
+
+.cart-item strong {
+color: #ffffff;
+font-size: 14px;
+font-weight: 500;
+display: block;
+margin-bottom: 5px;
+}
+
+.cart-item p {
+color: #FFD700;
+font-size: 14px;
+}
+
+.checkout-btn {
+width: 100%;
+padding: 15px;
+background: #ffffff;
+border: none;
+color: #000000;
+font-weight: 500;
+letter-spacing: 1px;
+margin-top: 20px;
+cursor: pointer;
+}
+
+.close-cart {
+position: absolute;
+top: 20px;
+right: 20px;
+background: none;
+border: none;
+color: #666;
+font-size: 20px;
+cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+.lookbook-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 768px) {
+.nav-links {
+gap: 20px;
+}
+
+.design-card {
+padding: 30px 20px;
+}
+
+.design-details {
+flex-direction: column;
+gap: 15px;
+}
+
+.price-section {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.cart-panel {
+width: 100%;
+}
 }
 </style>
 </head>
-
 <body>
 
+<!-- NAVBAR -->
 <nav>
 <div class="logo">
-<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/IMG_4451.png" alt="KR4FT INSIGNIA">
+<img src="YOUR_LOGO_LINK_HERE" alt="KR4FT INSIGNIA">
 </div>
-<ul>
-<li><a href="#">Shop</a></li>
-<li><a href="#">Lookbook</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#" onclick="toggleCart()">Cart</a></li>
-<li class="cart" id="cart-count">0</li>
+<ul class="nav-links">
+<li><a href="#">HOME</a></li>
+<li><a href="#archive">ARCHIVE</a></li>
+<li><a href="#lookbook">LOOKBOOK</a></li>
+<li><a href="#about">ABOUT</a></li>
+<li class="cart-icon" onclick="toggleCart()">
+CART <span id="cart-count">0</span>
+</li>
 </ul>
 </nav>
 
+<!-- HERO WITH LOGO -->
 <section class="hero">
-<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/IMG_4451.png" alt="KR4FT INSIGNIA" class="hero-logo">
-<p>ENGINEERED FOR THE FUTURE</p>
-<button onclick="scrollToShop()">SHOP COLLECTION</button>
+<img src="YOUR_LOGO_LINK_HERE" alt="KR4FT INSIGNIA" class="hero-logo">
+<h2>EST. 2024 // LAGOS</h2>
+<p>Industrial streetwear. Bootleg mentality. Nigerian soul.</p>
 </section>
 
-<section class="products" id="shop">
-<h2>Featured</h2>
-<div class="grid">
-
-<!-- PRODUCT 1: KR4FT POLO TEE -->
-<div class="card">
-<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/30F01E93-C6EA-4246-AA46-9BA332DED213.png" alt="KR4FT POLO TEE">
-<h3>KR4FT POLO TEE</h3>
-<p>₦50,000</p>
-<button onclick="addToCart('KR4FT POLO TEE', 50000)">Add to Cart</button>
+<!-- ARCHIVE SECTION - ALL DESIGNS FULLY VISIBLE -->
+<section class="archive" id="archive">
+<div class="section-title">
+<h2>ARCHIVE DROP 001</h2>
+<p>Four designs. One movement. No clicks needed.</p>
 </div>
 
-<!-- PRODUCT 2: NAIJA REP TEE -->
-<div class="card">
-<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/EB817053-9F0A-4BEB-91C8-803FD62AD29B.png" alt="NAIJA REP TEE">
-<h3>NAIJA REP TEE</h3>
-<p>₦30,000</p>
-<button onclick="addToCart('NAIJA REP TEE', 30000)">Add to Cart</button>
+<div class="design-grid">
+
+<!-- DESIGN 1: SEVENTY FOUR (IMG_4462) -->
+<div class="design-card">
+<div class="design-image">
+<img src="YOUR_4462_LINK_HERE" alt="SEVENTY FOUR DESIGN">
+</div>
+<div class="design-info">
+<h3>SEVENTY FOUR // WAR</h3>
+<div class="reference">REF: F074-001</div>
+<div class="description">
+Military archival piece. Raw industrial aesthetic with bootleg references.
+Screen printed on heavyweight cotton. KR4FT sleeve stamp.
+</div>
+<div class="design-details">
+<div class="detail-item">
+<div class="label">Material</div>
+<div class="value">100% Cotton</div>
+</div>
+<div class="detail-item">
+<div class="label">Fit</div>
+<div class="value">Oversized</div>
+</div>
+<div class="detail-item">
+<div class="label">Edition</div>
+<div class="value">Limited</div>
+</div>
+</div>
+<div class="price-section">
+<span class="price">₦32,000</span>
+<button class="add-btn" onclick="addToCart('SEVENTY FOUR TEE', 32000)">ADD TO CART</button>
+</div>
+</div>
 </div>
 
-<!-- PRODUCT 3: SantosXKR4FT Jersey -->
-<div class="card">
-<img src="https://raw.githubusercontent.com/KR4FT-inc/reimagined-octo-parakeet/main/IMG_4431.jpeg" alt="SantosXKR4FT Jersey">
-<h3>SantosXKR4FT Jersey</h3>
-<p>₦35,000</p>
-<button onclick="addToCart('SantosXKR4FT Jersey', 35000)">Add to Cart</button>
+<!-- DESIGN 2: PUNK HEARTS (IMG_4461) -->
+<div class="design-card">
+<div class="design-image">
+<img src="YOUR_4461_LINK_HERE" alt="PUNK HEARTS DESIGN">
+</div>
+<div class="design-info">
+<h3>PUNK HEARTS DROP</h3>
+<div class="reference">REF: PH-002</div>
+<div class="description">
+Punk collage aesthetic. PH / SINCE1918 / YACABERY / BLACKBER graphics.
+Back print with KR4FT branding. Distressed bootleg finish.
+</div>
+<div class="design-details">
+<div class="detail-item">
+<div class="label">Material</div>
+<div class="value">100% Cotton</div>
+</div>
+<div class="detail-item">
+<div class="label">Fit</div>
+<div class="value">Regular</div>
+</div>
+<div class="detail-item">
+<div class="label">Edition</div>
+<div class="value">Limited</div>
+</div>
+</div>
+<div class="price-section">
+<span class="price">₦28,000</span>
+<button class="add-btn" onclick="addToCart('PUNK HEARTS TEE', 28000)">ADD TO CART</button>
+</div>
+</div>
 </div>
 
+<!-- DESIGN 3: LDOGS (IMG_4460) -->
+<div class="design-card">
+<div class="design-image">
+<img src="YOUR_4460_LINK_HERE" alt="LDOGS DESIGN">
+</div>
+<div class="design-info">
+<h3>LDOGS 98 RAGLAN</h3>
+<div class="reference">REF: LD-003</div>
+<div class="description">
+Vintage sportswear reference. 19 / 98 / CALIFORNIA / 1987AELECTIC.CO.
+Raglan sleeve construction. KR4FT embroidery on sleeve.
+</div>
+<div class="design-details">
+<div class="detail-item">
+<div class="label">Material</div>
+<div class="value">Cotton/Poly</div>
+</div>
+<div class="detail-item">
+<div class="label">Fit</div>
+<div class="value">Baseball fit</div>
+</div>
+<div class="detail-item">
+<div class="label">Edition</div>
+<div class="value">Limited</div>
+</div>
+</div>
+<div class="price-section">
+<span class="price">₦38,000</span>
+<button class="add-btn" onclick="addToCart('LDOGS 98 RAGLAN', 38000)">ADD TO CART</button>
+</div>
+</div>
+</div>
+
+<!-- DESIGN 4: TEXT COLLAGE (IMG_4463) -->
+<div class="design-card">
+<div class="design-image">
+<img src="YOUR_4463_LINK_HERE" alt="COLLAGE DESIGN">
+</div>
+<div class="design-info">
+<h3>BILLY & JANE // WOLF PRIEST</h3>
+<div class="reference">REF: BJ-004</div>
+<div class="description">
+Multi-reference text collage. B.E.L.Y.P / WILD WEST / WOLF PRIEST /
+Palu / JORD GUIDE. KR4FT woven label at hem.
+</div>
+<div class="design-details">
+<div class="detail-item">
+<div class="label">Material</div>
+<div class="value">100% Cotton</div>
+</div>
+<div class="detail-item">
+<div class="label">Fit</div>
+<div class="value">Oversized</div>
+</div>
+<div class="detail-item">
+<div class="label">Edition</div>
+<div class="value">Limited</div>
+</div>
+</div>
+<div class="price-section">
+<span class="price">₦35,000</span>
+<button class="add-btn" onclick="addToCart('BILLY & JANE TEE', 35000)">ADD TO CART</button>
+</div>
+</div>
+</div>
 </div>
 </section>
 
-<section class="lookbook">
-<h2>Lookbook</h2>
-<div class="look-grid">
-<img src="https://via.placeholder.com/600x700/111111/ffffff?text=LOOK+1" alt="Lookbook 1">
-<img src="https://via.placeholder.com/600x700/222222/ffffff?text=LOOK+2" alt="Lookbook 2">
-<img src="https://via.placeholder.com/600x700/333333/ffffff?text=LOOK+3" alt="Lookbook 3">
+<!-- LOOKBOOK GRID -->
+<section class="lookbook" id="lookbook">
+<div class="section-title">
+<h2>LOOKBOOK</h2>
+<p>STM // 2024</p>
+</div>
+<div class="lookbook-grid">
+<img src="https://via.placeholder.com/600x800/222222/666666?text=KR4FT+01" alt="Lookbook">
+<img src="https://via.placeholder.com/600x800/222222/666666?text=KR4FT+02" alt="Lookbook">
+<img src="https://via.placeholder.com/600x800/222222/666666?text=KR4FT+03" alt="Lookbook">
+<img src="https://via.placeholder.com/600x800/222222/666666?text=KR4FT+04" alt="Lookbook">
 </div>
 </section>
 
-<section class="brand">
+<!-- ABOUT -->
+<section class="about" id="about">
 <h2>KR4FT INSIGNIA</h2>
-<p>KR4FT INSIGNIA is a futuristic streetwear label built for creators, rebels, and innovators. Crafted for individuals who design their own path.</p>
+<p>Born in Lagos. Built for the streets. Industrial design meets Nigerian soul. Every piece tells a story — from military archival to punk bootleg. This is not just clothing. This is movement.</p>
 </section>
 
+<!-- FOOTER -->
 <footer>
-<p>© KR4FT INSIGNIA</p>
+<p>© 2024 KR4FT INSIGNIA // STREETS MOVEMENT // LAGOS</p>
 </footer>
 
+<!-- CART PANEL -->
 <div class="cart-panel" id="cart-panel">
-<h2>Your Cart</h2>
+<button class="close-cart" onclick="toggleCart()">✕</button>
+<h2>YOUR CART</h2>
 <div id="cart-items"></div>
-<button class="checkout" onclick="checkout()">Checkout</button>
+<button class="checkout-btn" onclick="checkout()">CHECKOUT</button>
 </div>
 
 <script>
@@ -154,6 +619,10 @@ renderCart();
 function renderCart() {
 let container = document.getElementById("cart-items");
 container.innerHTML = "";
+if(cart.length === 0) {
+container.innerHTML = "<p style='color:#666;'>Your cart is empty</p>";
+return;
+}
 cart.forEach(item => {
 container.innerHTML += `<div class="cart-item"><strong>${item.name}</strong><p>₦${item.price.toLocaleString()}</p></div>`;
 });
@@ -163,12 +632,8 @@ function toggleCart() {
 document.getElementById("cart-panel").classList.toggle("active");
 }
 
-function scrollToShop() {
-document.getElementById("shop").scrollIntoView({behavior: "smooth"});
-}
-
 function checkout() {
-alert("Checkout will be integrated with Paystack for Nigerian payments.");
+alert("🚀 Paystack integration coming soon. Naija payments only.");
 }
 </script>
 
